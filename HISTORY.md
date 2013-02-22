@@ -1,5 +1,9 @@
 1.4.3 / 2013-02-16
 ==================
+  * Fixed a stupid typo.
+
+1.4.3 / 2013-02-16
+==================
   * Updated docs to reflect that Javascript objects can be displayed.
   * Added ability to pass functions as a sole argument, which are
         evaluated only if the current logging level is equal to or

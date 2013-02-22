@@ -1,6 +1,6 @@
 {
      "name": "fuzelog"
-  ,  "version": "1.4.3"
+  ,  "version": "1.4.4"
   ,  "description": "A simple logger fusing log.js with log4js's layouts and colors, supporting console and file logging."
   ,  "homepage:" : "https://github.com/stdarg/FuzeLog"
   ,  "repository" : {
