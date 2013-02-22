@@ -1,0 +1,19 @@
+{
+     "name": "fuzelog"
+  ,  "version": "1.4.3"
+  ,  "description": "A simple logger fusing log.js with log4js's layouts and colors, supporting console and file logging."
+  ,  "homepage:" : "https://github.com/stdarg/FuzeLog"
+  ,  "repository" : {
+          "type" : "git"
+        , "url" : "git@github.com:stdarg/FuzeLog.git"
+     }
+  ,  "maintainers": "Edmond Meinfelder <edmond@stdarg.com>"
+  ,  "author": "Edmond Meinfelder <edmond@stdarg.com>"
+  ,  "keywords": ["log", "logger", "layouts", "colors"]
+  ,  "main": "./lib/log.js"
+  ,  "engines": { "node": ">= 0.8.0" }
+  ,  "dependencies": {
+          "colors": "0.6.0-1"
+        , "sprintf.js": "0.0.3"
+     }
+}

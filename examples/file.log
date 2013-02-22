@@ -1,0 +1,11 @@
+fuzelog - failed to send email, object: {"a":667,"b":"This is a string.","c":22}
+fuzelog - a warning message
+fuzelog - an error message
+fuzelog - a critical message
+fuzelog - an alert message
+fuzelog - an emergency message
+[2013-02-22 13:59:50.233] [WARNING] example log - The fuzelog facility reports 67 ducks.
+[2013-02-22 14:02:03.043] [WARNING] example log - The fuzelog facility reports 67 ducks.
+[2013-02-22 14:02:53.605] [WARNING] example log - The fuzelog facility reports 67 ducks.
+[2013-02-22 14:03:29.109] [DEBUG] example log - The fuzelog facility reports 67 ducks.
+[2013-02-22 14:04:40.778] [INFO] example log - The fuzelog facility reports 67 ducks.
