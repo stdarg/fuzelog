@@ -31,6 +31,3 @@ tags
 
 # C temp files
 *.[oa]
-
-# git files
-.git*
