@@ -26,8 +26,8 @@ The log level defaults to __debug__, however we specify __info__, and the output
 
         // FileStream to log to (can be file name or a stream)
         file: __dirname + '/example.log',
-        fileFlags: 'a'              // Flags used in fs.createWriteStream to create log file
 
+        fileFlags: 'a',             // Flags used in fs.createWriteStream to create log file
         consoleLogging: true,       // Flag to direct output to console
         colorConsoleLogging: true,  // Flag to color output to console
 
@@ -45,9 +45,19 @@ The log level defaults to __debug__, however we specify __info__, and the output
                 c: 22 };
     log.emergency('failed to send %s, object: %j', 'email', obj);
 
+ The output for the previous exampls is:
+
+    [2013-02-22 14:55:25.816] [INFO] fuzelog - sending email
+    [2013-02-22 14:55:25.819] [ERROR] fuzelog - failed to send email
+    [2013-02-22 14:55:25.820] [EMERGENCY] fuzelog - failed to send email, object: {"a":667,"b":"This is a string.","c":22}
+
  We can also use `%s` much like `console.log()` to pass arguments:
 
-     log.error('oh no, failed to send mail to %s.', user.email);
+     log.error('oh no, failed to send mail to %s.', 'Edmond');
+
+ Output:
+
+     [2013-02-22 14:58:23.063] [ERROR] fuzelog - oh no, failed to send mail to Edmond.
 
  fuzelog accepts a function and will only call that function if the appropriate log level exists.
 
@@ -61,6 +71,10 @@ The log level defaults to __debug__, however we specify __info__, and the output
     // we don't de-reference the function now, fuzelog will evaluate it
     // if the logging level is correct
     log.info(logFunc);
+
+  Output:
+
+    [2013-02-22 14:59:36.892] [INFO] Unnamed - The fuzelog facility reports 67 ducks.
 
 ## Notes: 
 
