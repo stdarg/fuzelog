@@ -126,16 +126,16 @@ The log level defaults to __debug__, however we specify __info__, and the output
 
   The following settings are available in the configuration object:
 
-  level - String, Sets the logging level, no messages below this level are visible
+  *level* - String, Sets the logging level, no messages below this level are visible
   name - String  The name of the log. If you use the layout, the name is %c. The default name is "Unamed".
 
-  file - String, Path to the file to write log. If not specified, file logging does not happen.  consoleLogging - Boolean, If true, logging to the console will occur. If not specified, logging to the console in on by default.
+  *file* - String|Stream, Path to the file to write log. If not specified, file logging does not happen.  consoleLogging - Boolean, If true, logging to the console will occur. If not specified, logging to the console in on by default.
 
-  debugLvlConsoleFx - Object, An object contarining the facility names as keys (uppercase), with font effects in quotes, e.g. bold, inverse, underline.
+  *debugLvlConsoleFx* - Object, An object contarining the facility names as keys (uppercase), with font effects in quotes, e.g. bold, inverse, underline.
 
-  debugLvlColors - Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc.
+  *debugLvlColors* - Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc.
 
-  logMessagePattern - Strin, A string pattern using the log4js style, e.g.  '[%d{ISO8601}] [%p] %c - %m{1}'
+  *logMessagePattern* - String, A string pattern using the log4js style, e.g.  '[%d{ISO8601}] [%p] %c - %m{1}'
 
 ### Log.emergency(msg:String)
 
