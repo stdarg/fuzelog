@@ -1,7 +1,6 @@
-
 # fuzelog
 
- Fuzelog is a fusion of the log.js module by TJ Hollowaychuck with the layout and formatting options
+ fuzelog is a fusion of the log.js module by TJ Hollowaychuck with the layout and formatting options
  from log4js. Additionally, I ignored the color formatting in log4js and added my own colors and
  formatting.
 
@@ -15,9 +14,9 @@
 
 ## Example
 
-The original function of log.js remains down to the constructor arguments, however, if the first argument is an object, FuzeLog uses the object as a configuration object.
+The original usage of log.js remains down to the constructor arguments, however, if the first argument is an object, FuzeLog uses the object as a configuration object.
 
-The log level defaults to __debug__, however we specify __info__, and the output stream is set to the file 'example.log':
+The log level defaults to __debug__, however we specify __info__ below and the output stream is set to the file 'example.log':
 
     var Log = require('fuzelog');
     var logConfig = {
@@ -59,12 +58,13 @@ The log level defaults to __debug__, however we specify __info__, and the output
 
      [2013-02-22 14:58:23.063] [ERROR] fuzelog - oh no, failed to send mail to Edmond.
 
- fuzelog accepts a function and will only call that function if the appropriate log level exists.
+ fuzelog also accepts a function and will only call that function if the appropriate log level exists.
 
     var Log = require('fuzelog');
     var log = new Log();
 
     function logFunc() {
+        // fuzelog uses sprintf.js which places sprintf and printf into the global scope
         return sprintf('%s facility reports %d %s.', 'The fuzelog', 67, 'ducks');
     };
 
@@ -79,20 +79,25 @@ The log level defaults to __debug__, however we specify __info__, and the output
 ## Notes: 
 
 * fuzelog assumes utf8 encoded data.
-* fuzelog uses sprintf.js which places ``sprintf`` in the global namespace, ``printf`` and a ``sprintf`` on the String prototype. See the [sprintf.js github page](https://github.com/stdarg/sprintf.js "sprintf.js") for more information.
+* fuzelog uses sprintf.js which places ``printf`` and a ``sprintf`` in the global scope and onto the String prototype. See the [sprintf.js github page](https://github.com/stdarg/sprintf.js "sprintf.js") for more information.
 
 ## Log Levels
 
  Mirror that of syslog:
 
-  - 0 __EMERGENCY__  system is unusable
-  - 1 __ALERT__ action must be taken immediately
-  - 2 __CRITICAL__ the system is in critical condition
-  - 3 __ERROR__ error condition
-  - 4 __WARNING__ warning condition
-  - 5 __NOTICE__ a normal but significant condition
-  - 6 __INFO__ a purely informational message
-  - 7 __DEBUG__ messages to debug an application
+<table>
+<tr><td><b>Log Level</b></td> <td><b>Meaning</b></td></tr>
+<tr><td>EMERGENCY</td>        <td>system is unusable</td></tr>
+<tr><td>ALERT</td>            <td>action must be taken immediately</td></tr>
+<tr><td>CRITICAL</td>         <td>the system is in critical condition</td></tr>
+<tr><td>ERROR</td>            <td>error condition</td></tr>
+<tr><td>WARNING</td>          <td>warning condition</td></tr>
+<tr><td>NOTICE</td>           <td>a normal but significant condition</td></tr>
+<tr><td>INFO</td>             <td>a purely informational message</td></tr>
+<tr><td>DEBUG</td>            <td>messages to debug an application</td></tr>
+</table>
+
+When specifying the log level, fuzelog looks for an object in its constructor with a property named "level" having a string with the log level name (case does not matter).
 
 ## API
   - [lvlColors](#lvlcolors)
@@ -109,31 +114,71 @@ The log level defaults to __debug__, however we specify __info__, and the output
 
 ### lvlColors
 
-  Color settings for console logging. When constructing the logger, you can sepcify
-  the colors used on the console by setting property 'debugLvlColors' on the
-  configuration object passed to the Log constructor.
+Color settings for console logging. When constructing the logger, you can sepcify
+the colors used on the console by setting property 'debugLvlColors' on the
+configuration object passed to the Log constructor.  However, you must also turn on ``colorConsoleLogging`` which by default, is false.
+
+
+Example:
+
+    var Log = require('fuzelog');
+    var lvlColors = {
+        EMERGENCY:  'red',
+        ALERT:      'red',
+        CRITICAL:   'red',
+        ERROR:      'red',
+        WARNING:    'yellow',
+        NOTICE:     'grey',
+        INFO:       'grey',
+        DEBUG:      'grey'
+    };
+
+    var log = new Log( { colorConsoleLogging: true, debugLvlColors: lvlColors } );
+    log.warning('a warning message');
 
 ### lvlEffects
 
-  In addition to colors, it is possible to apply 1 additional color effect to the
-  log line, e.g. bold, underline, inverse. Simple set the 'debugLvlConsoleFx' property
-  to an object in the configuration object passed to the Log constructor and on that
-  object, set the facility name with the effect desired.
+In addition to colors, it is possible to apply 1 additional effect to the
+log line, e.g. bold, underline, inverse. Simple set the 'debugLvlConsoleFx' property
+to an object in the configuration object passed to the Log constructor and on that
+object, set the facility name with the effect desired. However, you must also turn on ``colorConsoleLogging`` which by default, is false.
+
+    var Log = require('fuzelog');
+    var lvlEffects = {
+        EMERGENCY:  'inverse',
+        ALERT:      false,
+        CRITICAL:   false,
+        ERROR:      false,
+        WARNING:    'inverse',
+        NOTICE:     false,
+        INFO:       false,
+        DEBUG:      'underline',
+    };
+
+    var logConfig = {
+        colorConsoleLogging: true,     // Use colors on the console
+        debugLvlConsoleFx: lvlEffects, // set font fx
+    };
+
+    var log = new Log(logConfig);
+    log.warning('a warning message');
 
 ### Log()
 
-  The constructor for fuzelog, called 'log', takes an optional configuration object to set various options. If the config object is not set, fuzelog will log to the console only, using default colors and the logging level is debug.
+  The constructor for fuzelog, called 'Log', takes an optional configuration object to set various options. If the config object is not set, fuzelog will log to the console only, using default colors and the logging level is debug.
 
   The following settings are available in the configuration object:
 
-  *level* - String, Sets the logging level, no messages below this level are visible
-  name - String  The name of the log. If you use the layout, the name is %c. The default name is "Unamed".
-
-  *file* - String|Stream, Path to the file to write log. If not specified, file logging does not happen.  consoleLogging - Boolean, If true, logging to the console will occur. If not specified, logging to the console in on by default.
-
-  *debugLvlConsoleFx* - Object, An object contarining the facility names as keys (uppercase), with font effects in quotes, e.g. bold, inverse, underline.
-
-  *debugLvlColors* - Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc.
+<table>
+<tr><td><b>Option</b></td>      <td><b>Meaning</b></td></tr>
+<tr><td>file</td>               <td>String|Stream, Path to the file to write log. If not specified, file logging does not happen.</td><tr>
+<tr><td>colorConsoleLogging</td><td>If true, colors and effects (bold, inverse and underline) are displayed to the console.</td><tr>
+<tr><td>consoleLogging          <td>Boolean, If true, logging to the console will occur. If not specified, logging to the console in on by default.</td></tr>
+<tr><td>debugLvlColors          <td>Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc.</td></tr>
+<tr><td>debugLvlConsoleFx</td>  <td>Object, An object contarining the facility names as keys (uppercase), with font effects in quotes, e.g. bold, inverse, underline.</td></tr>
+<tr><td>level</td>              <td>String, Sets the logging level, no messages below this level are visible.</td></tr>
+<tr><td>name</td>               <td>String  The name of the log. If you use the layout, the name is %c. The default name is "Unamed".</td></tr>
+<table>
 
   *logMessagePattern* - String, A string pattern using the log4js style, e.g.  '[%d{ISO8601}] [%p] %c - %m{1}'
 
