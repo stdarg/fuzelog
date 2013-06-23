@@ -5,8 +5,11 @@
  formatting.
 
  The original modules:
- [log4js](https://github.com/nomiddlename/log4js-node)
- [log.js](https://github.com/visionmedia/log.js)
+<table>
+<tr><td><b>Module</b></td>  <td><b>Description</b></td></tr>
+<tr><td>[log4js](https://github.com/nomiddlename/log4js-node "Link to log4js")</td>  <td>Robust and solid logging API which is very simmilar to the Java logging framework Log4j</td></tr>
+<tr><td>[log.js](https://github.com/visionmedia/log.js "Link to log.js")</td>       <td>Super light-weight nodejs logging + streaming log reader</td></tr>
+</table>
 
 ## Installation
 
@@ -172,12 +175,13 @@ object, set the facility name with the effect desired. However, you must also tu
 <table>
 <tr><td><b>Option</b></td>      <td><b>Meaning</b></td></tr>
 <tr><td>file</td>               <td>String|Stream, Path to the file to write log. If not specified, file logging does not happen.</td><tr>
-<tr><td>colorConsoleLogging</td><td>If true, colors and effects (bold, inverse and underline) are displayed to the console.</td><tr>
-<tr><td>consoleLogging          <td>Boolean, If true, logging to the console will occur. If not specified, logging to the console in on by default.</td></tr>
-<tr><td>debugLvlColors          <td>Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc.</td></tr>
+<tr><td>colorConsoleLogging</td><td>If true, colors and effects (bold, inverse and underline) are displayed to the console. False by default.</td><tr>
+<tr><td>consoleLogging          <td>Boolean, If true, logging to the console will occur. If not specified, logging to the console is true by default.</td></tr>
+<tr><td>debugLvlColors          <td>Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc. If not specified and colorConsoleLogging is true, default colors are used.</td></tr>
 <tr><td>debugLvlConsoleFx</td>  <td>Object, An object contarining the facility names as keys (uppercase), with font effects in quotes, e.g. bold, inverse, underline.</td></tr>
-<tr><td>level</td>              <td>String, Sets the logging level, no messages below this level are visible.</td></tr>
-<tr><td>name</td>               <td>String  The name of the log. If you use the layout, the name is %c. The default name is "Unamed".</td></tr>
+<tr><td>level</td>              <td>String, e.g. "info", sets the logging level, no messages below this level are visible.</td></tr>
+<tr><td>logMessagePattern       <td> String, a template from [log4js](https://github.com/nomiddlename/log4js-node) to specificy how each log line should appear, e.g. '[%d{ISO8601}] [%p] %c - %m{1}'</td></tr>
+<tr><td>name</td>               <td>String The name of the log. If you use the layout via logMessagePattern, the name is %c. The default name is "Unamed".</td></tr>
 <table>
 
   *logMessagePattern* - String, A string pattern using the log4js style, e.g.  '[%d{ISO8601}] [%p] %c - %m{1}'
@@ -217,4 +221,4 @@ object, set the facility name with the effect desired. However, you must also tu
 
 ## License
 
-The MIT License
+[The MIT License](http://opensource.org/licenses/MIT "Link to the MIT license")
