@@ -180,7 +180,7 @@ object, set the facility name with the effect desired. However, you must also tu
 <tr><td>debugLvlColors          <td>Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc. If not specified and colorConsoleLogging is true, default colors are used.</td></tr>
 <tr><td>debugLvlConsoleFx</td>  <td>Object, An object contarining the facility names as keys (uppercase), with font effects in quotes, e.g. bold, inverse, underline.</td></tr>
 <tr><td>level</td>              <td>String, e.g. "info", sets the logging level, no messages below this level are visible.</td></tr>
-<tr><td>logMessagePattern       <td> String, a template from [log4js](https://github.com/nomiddlename/log4js-node) to specificy how each log line should appear, e.g. '[%d{ISO8601}] [%p] %c - %m{1}'</td></tr>
+<tr><td>logMessagePattern</td>  <td> String, a template from [log4js](https://github.com/nomiddlename/log4js-node) to specificy how each log line should appear, e.g. '[%d{ISO8601}] [%p] %c - %m{1}'</td></tr>
 <tr><td>name</td>               <td>String The name of the log. If you use the layout via logMessagePattern, the name is %c. The default name is "Unamed".</td></tr>
 <table>
 
