@@ -7,7 +7,7 @@
  The original modules:
 <table>
 <tr><td><b>Module</b></td>  <td><b>Description</b></td></tr>
-<tr><td>[log4js](https://github.com/nomiddlename/log4js-node "Link to log4js")</td>  <td>Robust and solid logging API which is very simmilar to the Java logging framework Log4j</td></tr>
+<tr><td><a href="https://github.com/nomiddlename/log4js-node" title="Link to log4js">log4js<a/></td>  <td>Robust and solid logging API which is very simmilar to the Java logging framework Log4j</td></tr>
 <tr><td>[log.js](https://github.com/visionmedia/log.js "Link to log.js")</td>       <td>Super light-weight nodejs logging + streaming log reader</td></tr>
 </table>
 
