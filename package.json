@@ -1,7 +1,7 @@
 {
      "name": "fuzelog"
-  ,  "version": "1.4.4"
-  ,  "description": "A simple logger fusing log.js with log4js's layouts and colors, supporting console and file logging."
+  ,  "version": "1.4.6"
+  ,  "description": "A simple node.js logger fusing log.js with log4js's layouts and colors, supporting console and file logging."
   ,  "homepage:" : "https://github.com/stdarg/FuzeLog"
   ,  "repository" : {
           "type" : "git"
@@ -14,6 +14,6 @@
   ,  "engines": { "node": ">= 0.8.0" }
   ,  "dependencies": {
           "colors": "0.6.0-1"
-        , "sprintf.js": "0.0.5"
+        , "sprintf.js": "0.1.3"
      }
 }

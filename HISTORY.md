@@ -1,3 +1,12 @@
+1.4.5 / 2013-06-22
+==================
+  * Documentation improvements
+  * Updated version of sprintf.js
+
+1.4.3-4 / 2013-02-22
+==================
+  * Documentation improvements
+
 1.4.3 / 2013-02-16
 ==================
   * Fixed a stupid typo.
