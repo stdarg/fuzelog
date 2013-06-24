@@ -1,10 +1,21 @@
 # fuzelog
 
- fuzelog is a fusion of the log.js module by TJ Hollowaychuck with the layout and formatting options
- from log4js. Additionally, I ignored the color formatting in log4js and added my own colors and
- formatting.
+fuzelog is a fusion of the log.js module by TJ Hollowaychuck with the layout and formatting options
+from log4js. Additionally, there is printf-like functionality and the ability to pass functions called only
+when the level is correct.
 
- The original modules:
+The logic behind this module is that, when you are logging copious amounts of data, you often find yourself doing:
+
+    log.debug('The user object is: '+JSON.stringify(userObj));
+
+And this code runs in production. Though it produces no output to the log file or the console, the arguement evaluation is always done, which can
+many calls to functions like JSON.stringify. The goal of fuzelog is to provide means to avoid this if it is not needed. fuzelog gives you 2 ways to
+do this:
+
+1. printf-style argument evaluation done only if the right logging is in place
+1. function arguments that are called only when the logging level is correct
+
+The original modules from which fuzelog borrowed code:
 <table>
 <tr><td><b>Module</b></td>  <td><b>Description</b></td></tr>
 <tr><td><a href="https://github.com/nomiddlename/log4js-node" title="Link to log4js">log4js<a/></td><td>Robust and solid logging API which is very simmilar to the Java logging framework Log4j</td></tr>
