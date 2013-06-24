@@ -168,9 +168,9 @@ object, set the facility name with the effect desired. However, you must also tu
 
 ### Log()
 
-  The constructor for fuzelog, called 'Log', takes an optional configuration object to set various options. If the config object is not set, fuzelog will log to the console only, using default colors and the logging level is debug.
+The constructor for fuzelog, called 'Log', takes an optional configuration object to set various options. If the config object is not set, fuzelog will log to the console only, using default colors and the logging level is debug.
 
-  The following settings are available in the configuration object:
+The following settings are available in the configuration object:
 
 <table>
 <tr><td><b>Option</b></td>      <td><b>Meaning</b></td></tr>
@@ -180,11 +180,31 @@ object, set the facility name with the effect desired. However, you must also tu
 <tr><td>debugLvlColors          <td>Object,  An object contarining the facility names as keys (uppercase), with colors for each facility to display, e.g. green, blue, red, etc. If not specified and colorConsoleLogging is true, default colors are used.</td></tr>
 <tr><td>debugLvlConsoleFx</td>  <td>Object, An object contarining the facility names as keys (uppercase), with font effects in quotes, e.g. bold, inverse, underline.</td></tr>
 <tr><td>level</td>              <td>String, e.g. "info", sets the logging level, no messages below this level are visible.</td></tr>
-<tr><td>logMessagePattern</td>  <td> String, a template from [log4js](https://github.com/nomiddlename/log4js-node) to specificy how each log line should appear, e.g. '[%d{ISO8601}] [%p] %c - %m{1}'</td></tr>
+<tr><td>logMessagePattern</td>  <td>String, a template from log4js to specificy how each log line should appear, e.g. '[%d{ISO8601}] [%p] %c - %m{1}'
+</td></tr>
 <tr><td>name</td>               <td>String The name of the log. If you use the layout via logMessagePattern, the name is %c. The default name is "Unamed".</td></tr>
 <table>
 
-  *logMessagePattern* - String, A string pattern using the log4js style, e.g.  '[%d{ISO8601}] [%p] %c - %m{1}'
+The following format descriptors exist for the logMessagePattern:
+
+<table>
+<tr><td><b>Descriptor</b></td>    <td><b>Meaning<b></td></tr>
+<tr><td>%r</td>                   <td>time in toLocaleTimeString format</td></tr>
+<tr><td>%p</td>                   <td>log level</td></tr>
+<tr><td>%c</td>                   <td>log category</td></tr>
+<tr><td>%m</td>                   <td>log data</td></tr>
+<tr><td>%d</td>                   <td>date in various formats</td></tr>
+<tr><td>%%</td>                   <td>%</td></tr>
+<tr><td>%n</td>                   <td>newline</td></tr>
+</table>
+
+Thus, if the logMessagePattern is '[%d{ISO8601}] [%p] %c - %m{1}' then the following line:
+
+    log.info('an info message');
+
+will produce the following output:
+
+    [2013-06-23 18:11:24.452] [INFO] example log - an info message
 
 ### Log.emergency(msg:String)
 
