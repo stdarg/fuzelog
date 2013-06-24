@@ -105,7 +105,7 @@ When specifying the log level, fuzelog looks for an object in its constructor wi
 ## API
   - [lvlColors](#lvlcolors)
   - [lvlEffects](#lvleffects)
-  - [Log()](#log)
+  - [Log() (constructor)](#log)
   - [Log.emergency()](#logemergencymsgstring)
   - [Log.alert()](#logalertmsgstring)
   - [Log.critical()](#logcriticalmsgstring)
@@ -115,12 +115,10 @@ When specifying the log level, fuzelog looks for an object in its constructor wi
   - [Log.info()](#loginfomsgstring)
   - [Log.debug()](#logdebugmsgstring)
 
-### lvlColors
-
+#### lvlColors
 Color settings for console logging. When constructing the logger, you can sepcify
 the colors used on the console by setting property 'debugLvlColors' on the
 configuration object passed to the Log constructor.  However, you must also turn on ``colorConsoleLogging`` which by default, is false.
-
 
 Example:
 
@@ -139,8 +137,7 @@ Example:
     var log = new Log( { colorConsoleLogging: true, debugLvlColors: lvlColors } );
     log.warning('a warning message');
 
-### lvlEffects
-
+#### lvlEffects
 In addition to colors, it is possible to apply 1 additional effect to the
 log line, e.g. bold, underline, inverse. Simple set the 'debugLvlConsoleFx' property
 to an object in the configuration object passed to the Log constructor and on that
@@ -166,7 +163,7 @@ object, set the facility name with the effect desired. However, you must also tu
     var log = new Log(logConfig);
     log.warning('a warning message');
 
-### Log()
+#### Log() (constructor)
 
 The constructor for fuzelog, called 'Log', takes an optional configuration object to set various options. If the config object is not set, fuzelog will log to the console only, using default colors and the logging level is debug.
 
@@ -198,7 +195,7 @@ The following format descriptors exist for the logMessagePattern:
 <tr><td>%n</td>                   <td>newline</td></tr>
 </table>
 
-Thus, if the logMessagePattern is '[%d{ISO8601}] [%p] %c - %m{1}' then the following line:
+If the logMessagePattern is ``'[%d{ISO8601}] [%p] %c - %m{1}'`` then the following line:
 
     log.info('an info message');
 
