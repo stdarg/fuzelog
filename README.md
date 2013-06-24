@@ -9,7 +9,7 @@ The logic behind this module is that, when you are logging copious amounts of da
     log.debug('The user object is: '+JSON.stringify(userObj));
 
 And this code runs in production. Though it produces no output to the log file or the console, the arguement evaluation is always done, which can mean
-many calls to functions like JSON.stringify. The goal of fuzelog is to provide means to avoid unneccessary evaluations. fuzelog gives you 2 ways to
+many calls to functions like JSON.stringify. The goal of fuzelog is to provide a means to avoid unneccessary evaluations. fuzelog gives you 2 ways to
 do this:
 
 1. printf-style argument evaluation done only if the right logging is in place
@@ -213,6 +213,8 @@ If the logMessagePattern is ``'[%d{ISO8601}] [%p] %c - %m{1}'`` then the followi
 will produce the following output:
 
     [2013-06-23 18:11:24.452] [INFO] example log - an info message
+
+You can find more information on log message patterns at the [Apache log4j PatternLayout Page](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html "Link to the Apache log4j PatternLayout page").
 
 #### Log.emergency(msg:String)
 
