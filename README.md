@@ -206,35 +206,35 @@ will produce the following output:
 
     [2013-06-23 18:11:24.452] [INFO] example log - an info message
 
-### Log.emergency(msg:String)
+#### Log.emergency(msg:String)
 
   Display a log message in the emergency facility.
 
-### Log.alert(msg:String)
+#### Log.alert(msg:String)
 
   Display a log message in the alert facility.
 
-### Log.critical(msg:String)
+#### Log.critical(msg:String)
 
   Display a log message in the critical facility.
 
-### Log.error(msg:String)
+#### Log.error(msg:String)
 
   Display a log message in the error facility.
 
-### Log.warning(msg:String)
+#### Log.warning(msg:String)
 
   Display a log message in the warning facility.
 
-### Log.notice(msg:String)
+#### Log.notice(msg:String)
 
   Display a log message in the notice facility.
 
-### Log.info(msg:String)
+#### Log.info(msg:String)
 
   Display a log message in the info facility.
 
-### Log.debug(msg:String)
+#### Log.debug(msg:String)
 
   Display a log message in the debug facility.
 
