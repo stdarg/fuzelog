@@ -8,12 +8,12 @@ The logic behind this module is that, when you are logging copious amounts of da
 
     log.debug('The user object is: '+JSON.stringify(userObj));
 
-And this code runs in production. Though it produces no output to the log file or the console, the arguement evaluation is always done, which can
-many calls to functions like JSON.stringify. The goal of fuzelog is to provide means to avoid this if it is not needed. fuzelog gives you 2 ways to
+And this code runs in production. Though it produces no output to the log file or the console, the arguement evaluation is always done, which can mean
+many calls to functions like JSON.stringify. The goal of fuzelog is to provide means to avoid unneccessary evaluations. fuzelog gives you 2 ways to
 do this:
 
 1. printf-style argument evaluation done only if the right logging is in place
-1. function arguments that are called only when the logging level is correct
+1. function arguments that, when evaluated, produce a string and are called only when the logging level is correct
 
 The original modules from which fuzelog borrowed code:
 <table>
