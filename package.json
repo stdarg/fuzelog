@@ -1,19 +1,30 @@
 {
-     "name": "fuzelog"
-  ,  "version": "1.4.6"
-  ,  "description": "A simple node.js logger fusing log.js with log4js's layouts and colors, supporting console and file logging."
-  ,  "homepage:" : "https://github.com/stdarg/FuzeLog"
-  ,  "repository" : {
-          "type" : "git"
-        , "url" : "git@github.com:stdarg/FuzeLog.git"
-     }
-  ,  "maintainers": "Edmond Meinfelder <edmond@stdarg.com>"
-  ,  "author": "Edmond Meinfelder <edmond@stdarg.com>"
-  ,  "keywords": ["log", "logger", "layouts", "colors"]
-  ,  "main": "./lib/log.js"
-  ,  "engines": { "node": ">= 0.8.0" }
-  ,  "dependencies": {
-          "colors": "0.6.0-1"
-        , "sprintf.js": "0.1.3"
-     }
+  "name": "fuzelog",
+  "version": "1.4.7",
+  "description": "A simple node.js logger fusing log.js with log4js's layouts and colors, supporting console and file logging.",
+  "homepage: ":"https://github.com/stdarg/FuzeLog",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stdarg/FuzeLog.git"
+  },
+  "maintainers": "Edmond Meinfelder <edmond@stdarg.com>",
+  "author": "Edmond Meinfelder <edmond@stdarg.com>",
+  "license": "MIT",
+  "keywords": [
+    "log",
+    "simple",
+    "logger",
+    "layout",
+    "layouts",
+    "color",
+    "colors"
+  ],
+  "main": "./lib/log.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "colors": "0.6.2",
+    "sprintf.js": "0.1.3"
+  }
 }

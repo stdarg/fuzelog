@@ -1,16 +1,17 @@
 # fuzelog
+fuzelog is a fusion of the log.js module by TJ Hollowaychuck with the layout and
+formatting options from log4js. Additionally, there is printf-like functionality
+and the ability to pass functions called only when the level is correct.
 
-fuzelog is a fusion of the log.js module by TJ Hollowaychuck with the layout and formatting options
-from log4js. Additionally, there is printf-like functionality and the ability to pass functions called only
-when the level is correct.
-
-The logic behind this module is that, when you are logging copious amounts of data, you often find yourself doing:
+The logic behind this module is that, when you are logging copious amounts of
+data, you often find yourself doing:
 
     log.debug('The user object is: '+JSON.stringify(userObj));
 
-And this code runs in production. Though it produces no output to the log file or the console, the arguement evaluation is always done, which can mean
-many calls to functions like JSON.stringify. The goal of fuzelog is to provide a means to avoid unneccessary evaluations. fuzelog gives you 2 ways to
-do this:
+And this code runs in production. Though it produces no output to the log file
+or the console, the arguement evaluation is always done, which can mean many
+calls to functions like JSON.stringify. The goal of fuzelog is to provide a
+means to avoid unneccessary evaluations. fuzelog gives you 2 ways to do this:
 
 1. printf-style argument evaluation done only if the right logging is in place
 1. function arguments that, when evaluated, produce a string and are called only when the logging level is correct
@@ -27,10 +28,12 @@ The original modules from which fuzelog borrowed code:
     $ npm install fuzelog
 
 ## Example
+The original usage of log.js remains down to the constructor arguments, however,
+if the first argument is an object, FuzeLog uses the object as a configuration
+object.
 
-The original usage of log.js remains down to the constructor arguments, however, if the first argument is an object, FuzeLog uses the object as a configuration object.
-
-The log level defaults to __debug__, however we specify __info__ below and the output stream is set to the file 'example.log':
+The log level defaults to __debug__, however we specify __info__ below and the
+output stream is set to the file 'example.log':
 
     var Log = require('fuzelog');
     var logConfig = {
@@ -97,7 +100,7 @@ The log level defaults to __debug__, however we specify __info__ below and the o
 
 ## Log Levels
 
- Mirror that of syslog:
+The log levels mirror that of syslog:
 
 <table>
 <tr><td><b>Log Level</b></td> <td><b>Meaning</b></td></tr>
@@ -127,9 +130,10 @@ When specifying the log level, fuzelog looks for an object in its constructor wi
   - [Log.debug()](#logdebugmsgstring)
 
 #### lvlColors
-Color settings for console logging. When constructing the logger, you can sepcify
-the colors used on the console by setting property 'debugLvlColors' on the
-configuration object passed to the Log constructor.  However, you must also turn on ``colorConsoleLogging`` which by default, is false.
+Color settings for console logging. When constructing the logger, you can
+sepcify the colors used on the console by setting property 'debugLvlColors' on
+the configuration object passed to the Log constructor.  However, you must also
+turn on ``colorConsoleLogging`` which by default, is false.
 
 Example:
 
@@ -149,10 +153,11 @@ Example:
     log.warning('a warning message');
 
 #### lvlEffects
-In addition to colors, it is possible to apply 1 additional effect to the
-log line, e.g. bold, underline, inverse. Simple set the 'debugLvlConsoleFx' property
-to an object in the configuration object passed to the Log constructor and on that
-object, set the facility name with the effect desired. However, you must also turn on ``colorConsoleLogging`` which by default, is false.
+In addition to colors, it is possible to apply 1 additional effect to the log
+line, e.g. bold, underline, inverse. Simple set the 'debugLvlConsoleFx' property
+to an object in the configuration object passed to the Log constructor and on
+that object, set the facility name with the effect desired. However, you must
+also turn on ``colorConsoleLogging`` which by default, is false.
 
     var Log = require('fuzelog');
     var lvlEffects = {
@@ -176,7 +181,9 @@ object, set the facility name with the effect desired. However, you must also tu
 
 #### Log() (constructor)
 
-The constructor for fuzelog, called 'Log', takes an optional configuration object to set various options. If the config object is not set, fuzelog will log to the console only, using default colors and the logging level is debug.
+The constructor for fuzelog, called 'Log', takes an optional configuration
+object to set various options. If the config object is not set, fuzelog will log
+to the console only, using default colors and the logging level is debug.
 
 The following settings are available in the configuration object:
 
@@ -206,7 +213,8 @@ The following format descriptors exist for the logMessagePattern:
 <tr><td>%n</td>                   <td>newline</td></tr>
 </table>
 
-If the logMessagePattern is ``'[%d{ISO8601}] [%p] %c - %m{1}'`` then the following line:
+If the logMessagePattern is ``'[%d{ISO8601}] [%p] %c - %m{1}'`` then the
+following line:
 
     log.info('an info message');
 
@@ -214,7 +222,9 @@ will produce the following output:
 
     [2013-06-23 18:11:24.452] [INFO] example log - an info message
 
-You can find more information on log message patterns at the [Apache log4j PatternLayout Page](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html "Link to the Apache log4j PatternLayout page").
+You can find more information on log message patterns at the
+[Apache log4j PatternLayout Page](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html
+"Link to the Apache log4j PatternLayout page").
 
 #### Log.emergency(msg:String)
 
@@ -248,7 +258,24 @@ You can find more information on log message patterns at the [Apache log4j Patte
 
   Display a log message in the debug facility.
 
-
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT "Link to the MIT license")
+Copyright (c) 2013,2014 Edmond Meinfelder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

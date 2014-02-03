@@ -1,11 +1,100 @@
+[2013-06-23 13:17:41.765] [DEBUG] example log - a debug message Hello!
+[2013-06-23 13:17:41.769] [INFO] example log - an info message
+[2013-06-23 13:17:41.770] [NOTICE] example log - a notice message
+[2013-06-23 13:17:41.770] [WARNING] example log - a warning message
+[2013-06-23 13:17:41.770] [ERROR] example log - an error message
+[2013-06-23 13:17:41.770] [CRITICAL] example log - a critical message
+[2013-06-23 13:17:41.770] [ALERT] example log - an alert message
+[2013-06-23 13:17:41.770] [EMERGENCY] example log - an emergency message
+[2013-06-23 13:18:21.282] [INFO] example log - an info message: hiya
+[2013-06-23 13:18:21.287] [NOTICE] example log - a notice message
+[2013-06-23 13:18:21.287] [WARNING] example log - a warning message
+[2013-06-23 13:18:21.287] [ERROR] example log - an error message
+[2013-06-23 13:18:21.287] [CRITICAL] example log - a critical message
+[2013-06-23 13:18:21.288] [ALERT] example log - an alert message
+[2013-06-23 13:18:21.288] [EMERGENCY] example log - an emergency message
+fuzelog - a warning message
+fuzelog - an error message
+fuzelog - a critical message
+fuzelog - an alert message
+fuzelog - an emergency message
 fuzelog - failed to send email, object: {"a":667,"b":"This is a string.","c":22}
 fuzelog - a warning message
 fuzelog - an error message
 fuzelog - a critical message
 fuzelog - an alert message
 fuzelog - an emergency message
-[2013-02-22 13:59:50.233] [WARNING] example log - The fuzelog facility reports 67 ducks.
-[2013-02-22 14:02:03.043] [WARNING] example log - The fuzelog facility reports 67 ducks.
-[2013-02-22 14:02:53.605] [WARNING] example log - The fuzelog facility reports 67 ducks.
-[2013-02-22 14:03:29.109] [DEBUG] example log - The fuzelog facility reports 67 ducks.
-[2013-02-22 14:04:40.778] [INFO] example log - The fuzelog facility reports 67 ducks.
+[2013-06-23 13:18:53.004] [INFO] example log - The fuzelog facility reports 67 ducks.
+[2013-06-23 13:48:58.284] [INFO] example log - an info message: hiya
+[2013-06-23 13:48:58.289] [NOTICE] example log - a notice message
+[2013-06-23 13:48:58.289] [WARNING] example log - a warning message
+[2013-06-23 13:48:58.289] [ERROR] example log - an error message
+[2013-06-23 13:48:58.290] [CRITICAL] example log - a critical message
+[2013-06-23 13:48:58.290] [ALERT] example log - an alert message
+[2013-06-23 13:48:58.290] [EMERGENCY] example log - an emergency message
+[2013-06-23 13:49:30.132] [INFO] example log - an info message: hiya
+[2013-06-23 13:49:30.137] [NOTICE] example log - a notice message
+[2013-06-23 13:49:30.137] [WARNING] example log - a warning message
+[2013-06-23 13:49:30.137] [ERROR] example log - an error message
+[2013-06-23 13:49:30.137] [CRITICAL] example log - a critical message
+[2013-06-23 13:49:30.137] [ALERT] example log - an alert message
+[2013-06-23 13:49:30.137] [EMERGENCY] example log - an emergency message
+[2013-06-23 13:49:49.976] [INFO] example log - an info message: hiya
+[2013-06-23 13:49:49.981] [NOTICE] example log - a notice message
+[2013-06-23 13:49:49.981] [WARNING] example log - a warning message
+[2013-06-23 13:49:49.981] [ERROR] example log - an error message
+[2013-06-23 13:49:49.981] [CRITICAL] example log - a critical message
+[2013-06-23 13:49:49.981] [ALERT] example log - an alert message
+[2013-06-23 13:49:49.981] [EMERGENCY] example log - an emergency message
+[2013-06-23 18:11:24.452] [INFO] example log - an info message: hiya
+[2013-06-23 18:11:24.460] [NOTICE] example log - a notice message
+[2013-06-23 18:11:24.460] [WARNING] example log - a warning message
+[2013-06-23 18:11:24.460] [ERROR] example log - an error message
+[2013-06-23 18:11:24.460] [CRITICAL] example log - a critical message
+[2013-06-23 18:11:24.460] [ALERT] example log - an alert message
+[2013-06-23 18:11:24.461] [EMERGENCY] example log - an emergency message
+[2013-06-28 07:22:46.551] [INFO] example log - an info message: hiya
+[2013-06-28 07:22:46.555] [NOTICE] example log - a notice message
+[2013-06-28 07:22:46.556] [WARNING] example log - a warning message
+[2013-06-28 07:22:46.556] [ERROR] example log - an error message
+[2013-06-28 07:22:46.556] [CRITICAL] example log - a critical message
+[2013-06-28 07:22:46.556] [ALERT] example log - an alert message
+[2013-06-28 07:22:46.556] [EMERGENCY] example log - an emergency message
+fuzelog - a warning message
+fuzelog - an error message
+fuzelog - a critical message
+fuzelog - an alert message
+fuzelog - an emergency message
+fuzelog - failed to send email, object: {"a":667,"b":"This is a string.","c":22}
+fuzelog - a warning message
+fuzelog - an error message
+fuzelog - a critical message
+fuzelog - an alert message
+fuzelog - an emergency message
+[2013-06-28 07:23:00.168] [INFO] example log - The fuzelog facility reports 67 ducks.
+[2013-06-30 12:42:33.015] [DEBUG] example log - a debug message Hello!
+[2013-06-30 12:42:33.020] [INFO] example log - an info message
+[2013-06-30 12:42:33.021] [NOTICE] example log - a notice message
+[2013-06-30 12:42:33.021] [WARNING] example log - a warning message
+[2013-06-30 12:42:33.021] [ERROR] example log - an error message
+[2013-06-30 12:42:33.021] [CRITICAL] example log - a critical message
+[2013-06-30 12:42:33.021] [ALERT] example log - an alert message
+[2013-06-30 12:42:33.021] [EMERGENCY] example log - an emergency message
+[2013-06-30 12:42:40.913] [INFO] example log - an info message: hiya
+[2013-06-30 12:42:40.917] [NOTICE] example log - a notice message
+[2013-06-30 12:42:40.918] [WARNING] example log - a warning message
+[2013-06-30 12:42:40.918] [ERROR] example log - an error message
+[2013-06-30 12:42:40.918] [CRITICAL] example log - a critical message
+[2013-06-30 12:42:40.918] [ALERT] example log - an alert message
+[2013-06-30 12:42:40.918] [EMERGENCY] example log - an emergency message
+fuzelog - a warning message
+fuzelog - an error message
+fuzelog - a critical message
+fuzelog - an alert message
+fuzelog - an emergency message
+fuzelog - failed to send email, object: {"a":667,"b":"This is a string.","c":22}
+fuzelog - a warning message
+fuzelog - an error message
+fuzelog - a critical message
+fuzelog - an alert message
+fuzelog - an emergency message
